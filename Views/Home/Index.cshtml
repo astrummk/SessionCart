@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+
+    IEnumerable<Order> order = ViewData["Order"] as IEnumerable<Order>;
+}
+
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Use the session variable to store order details. You can change the quantity of order items in Cart page.</p>
+</div>
+
+<table class="table table-sm">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Model ID</th>
+            <th scope="col">Model Name</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index" asp-route-id="A2">A2</a></td>
+            <td><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index" asp-route-id="A2">Air Max</a></td>
+            <td><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index" asp-route-id="A2">Add to Cart</a></td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index" asp-route-id="B3">B3</a></td>
+            <td><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index" asp-route-id="B3">Air Tailwind</a></td>
+            <td><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index" asp-route-id="B3">Add to Cart</a></td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index" asp-route-id="D4">D4</a></td>
+            <td><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index" asp-route-id="D4">Air Zoom Pegasus</a></td>
+            <td><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index" asp-route-id="D4">Add to Cart</a></td>
+        </tr>
+    </tbody>
+</table>
+

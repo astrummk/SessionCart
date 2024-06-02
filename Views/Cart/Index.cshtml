@@ -1,0 +1,53 @@
+﻿@{
+    IEnumerable<Order> order = ViewData["Cart"] as IEnumerable<Order>;
+}
+
+
+<h1>Cart </h1>
+
+
+<table class="table table-borderless">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Model ID</th>
+            <th scope="col">Model Name</th>
+            <th scope="col">Qty</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Order ord in order)
+        {
+            <tr>
+                <td>1</td>
+                <td>@ord.OrderProductID</td>
+                <td>@ord.OrderProductName</td>
+                <td>@ord.OrderProductQty</td>
+                <td>
+                    <form asp-controller="Cart" asp-action="Edit" method="post">
+                        <input name="txtID" type="hidden" value="@ord.OrderProductID" />
+                        <input name="txtKol" type="hidden" value="1" />
+                        <input type="submit" class="btn btn-light" value="+" />
+                    </form>
+                </td>
+                <td>
+                    <form asp-controller="Cart" asp-action="Edit" method="post">
+                        <input name="txtID" type="hidden" value="@ord.OrderProductID" />
+                        <input name="txtKol" type="hidden" value="-1" />
+                        <input type="submit" class="btn btn-light" value="-" />
+                    </form>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+    
+</table>
+    <form asp-controller="Cart" asp-action="Order" method="post">
+        <input type="submit" class="btn btn-light" value="Order products" />
+    </form>
+
+
+
